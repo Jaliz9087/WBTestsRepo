@@ -1,6 +1,5 @@
 package PO;
 
-//import attach.Screen;
 import Attach.Attachments;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
