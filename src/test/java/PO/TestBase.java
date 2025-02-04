@@ -17,10 +17,9 @@ public class TestBase {
     static void beforeAll() {
         Configuration.timeout = 10000;
         Configuration.browser = System.getProperty("browser");
-        Configuration.browserSize = System.getProperty("browserSize");
+        Configuration.browserSize = System.getProperty("browserSize", "1920×1080");
         Configuration.browserVersion = System.getProperty("browserVersion");
         Configuration.pageLoadStrategy = "eager";
-        String remoteHost = System.getProperty("remoteHost", "localhost");
         Configuration.remote = "https://user1:1234@" + System.getProperty("remoteHost") + "/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
