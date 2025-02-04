@@ -67,6 +67,7 @@ public class MainPagePO {
     }
     public MainPagePO basketResult(String value){
         resultBasket.shouldHave(text(value));
+        sleep(7000);
         return this;
     }
     public MainPagePO openBurgMenu(){
