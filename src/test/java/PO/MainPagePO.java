@@ -79,11 +79,11 @@ public class MainPagePO {
     }
     public MainPagePO clickCurrencyButton(){
         curButt.click();
+        sleep(8000);
         return this;
     }
     public MainPagePO selectCurrency(){
         bynButt.click();
-        sleep(7000);
         return this;
     }
     public MainPagePO checkCurrencyResult(String value){
