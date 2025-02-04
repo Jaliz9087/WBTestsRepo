@@ -83,10 +83,12 @@ public class MainPagePO {
     }
     public MainPagePO selectCurrency(){
         bynButt.click();
+        sleep(7000);
         return this;
     }
     public MainPagePO checkCurrencyResult(String value){
         checkCurr.shouldHave(text(value));
+
         return this;
     }
     public MainPagePO clickAddressButton(){
