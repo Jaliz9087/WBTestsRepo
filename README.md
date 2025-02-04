@@ -27,3 +27,49 @@
 <a href="https://www.jenkins.io/"><img src="icons/jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
 
 </p>
+---
+<a id="cases"></a>
+## <a name="Примеры автоматизированных тест-кейсов">**Примеры автоматизированных тест-кейсов:**</a>
+---
+- ✓ *Проверка ошибки при вводе невалидного номера телефона*
+- ✓ *Проверка поиска товара и дропа его в корзину*
+- ✓ *Проверка работы бургера*
+- ✓ *Проверка изменения валюты*
+- ✓ *Проверка маппинга латиницы при поиске улицы на карте*
+
+---
+<a id="jenkins"></a>
+## <img alt="Jenkins" height="25" src="icons/jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/whey-WBTest-QG14/)</a>
+____
+<p align="center">  
+<a href="https://jenkins.autotests.cloud/job/whey-WBTest-QG14/"><img src="screens/JenkinsJob.png" alt="Jenkins" width="950"/></a>  
+</p>
+---
+# **Параметры сборки в Jenkins:**
+
+- *browser (браузер, по умолчанию chrome)*
+- *browserVersion (версия браузера, по умолчанию 126)*
+- *browserSize (размер окна браузера, по умолчанию 1920x1080)*
+- *remoteUrl (логин, пароль и адрес удаленного сервера Selenoid)*
+
+---
+<a id="console"></a>
+## Команды для запуска из терминала
+___
+***Локальный запуск:***
+```bash  
+gradle clean AllTests
+```
+
+***Удалённый запуск через Jenkins:***
+```bash  
+clean X5Group_test
+"-Dbrowser=${BROWSER}"
+"-DbrowserSize=${BROWSER_SIZE}"
+"-DbrowserVersion=${BROWSER_VERSION}"
+"-DremoteHost=${WDHOST}"
+```
+---
+<a id="allure"></a>
+## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/allure/)</a>
+___
