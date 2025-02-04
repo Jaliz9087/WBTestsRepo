@@ -31,6 +31,7 @@ public class MainPagePO {
     }
 
     public MainPagePO loginClick (){
+        sleep(7000);
         loginPageClick.click();
         return this;
     }
