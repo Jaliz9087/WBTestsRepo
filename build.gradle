@@ -49,9 +49,9 @@ tasks.withType(Test) {
     }
 }
 
-task AllTest(type: Test) {
+task AllTests(type: Test) {
     useJUnitPlatform {
-        includeTags("AllTest")
+        includeTags("AllTests")
     }
 }
 task NegativeTest(type: Test) {
