@@ -15,14 +15,13 @@ import java.util.Map;
 public class TestBase {
     @BeforeAll
     static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
         Configuration.timeout = 10000;
         Configuration.browser = System.getProperty("browser");
-        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.browserVersion = System.getProperty("browserVersion", "126");
+        Configuration.browserSize = System.getProperty("browserSize");
+        Configuration.browserVersion = System.getProperty("browserVersion");
         Configuration.pageLoadStrategy = "eager";
         String remoteHost = System.getProperty("remoteHost", "localhost");
-        Configuration.remote = "https://user1:1234@" + remoteHost + "/wd/hub";
+        Configuration.remote = "https://user1:1234@" + System.getProperty("remoteHost") + "/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
