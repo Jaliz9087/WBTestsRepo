@@ -45,6 +45,7 @@ public class MainPagePO {
     }
     //2ndTest
     public MainPagePO setOurGoods(String value){
+        sleep(3000);
         setGoods.setValue(value).pressEnter();
         return this;
     }
