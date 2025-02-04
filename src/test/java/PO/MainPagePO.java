@@ -70,6 +70,7 @@ public class MainPagePO {
         return this;
     }
     public MainPagePO openBurgMenu(){
+        sleep(7000);
         openMenu.click();
         return this;
     }
@@ -79,7 +80,7 @@ public class MainPagePO {
     }
     public MainPagePO clickCurrencyButton(){
         curButt.click();
-        sleep(8000);
+        sleep(4000);
         return this;
     }
     public MainPagePO selectCurrency(){
