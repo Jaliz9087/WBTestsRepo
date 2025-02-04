@@ -54,28 +54,3 @@ task AllTests(type: Test) {
         includeTags("AllTests")
     }
 }
-task NegativeTest(type: Test) {
-    useJUnitPlatform {
-        includeTags("NegativeTest")
-    }
-}
-task SearchNBasket(type: Test) {
-    useJUnitPlatform {
-        includeTags("SearchNBasket")
-    }
-}
-task BurgerTest(type: Test) {
-    useJUnitPlatform {
-        includeTags("BurgerTest")
-    }
-}
-task Currency(type: Test) {
-    useJUnitPlatform {
-        includeTags("Currency")
-    }
-}
-task MapTest(type: Test) {
-    useJUnitPlatform {
-        includeTags("MapTest")
-    }
-}
