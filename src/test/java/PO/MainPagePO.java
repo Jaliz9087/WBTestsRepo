@@ -2,10 +2,7 @@ package PO;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import ru.urent.Main;
-
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 
