@@ -56,7 +56,8 @@ public class MainPageTests extends TestBase {
     @ValueSource(strings = {
             "Сертификаты Wildberries"
     })
-    @ParameterizedTest(name = "Смотрим серты в бургере ")
+    @ParameterizedTest
+    @DisplayName("Смотрим серты в бургере")
     @Tag("BurgerTest")
     void checkBrowserPage(String Check){
         step("Открыть бургер", () ->{
