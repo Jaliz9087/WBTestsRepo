@@ -1,10 +1,13 @@
 package PO;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
+import ru.urent.Main;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selenide.*;
+
 
 public class MainPagePO {
     public SelenideElement loginPageClick =  $("a[href=\"/security/login?returnUrl=https%3A%2F%2Fwww.wildberries.ru%2F\"]"),
@@ -15,7 +18,15 @@ public class MainPagePO {
     resultsOurSearch=$(".searching-results__inner"),
     basketDrop = $(".product-page__order-buttons"),
     clickBasket = $(".navbar-pc__icon--basket"),
-    resultBasket = $(".good-info__good-name");
+    resultBasket = $(".good-info__good-name"),
+    openMenu = $(".nav-element__burger-line"),
+    sert = $("a[href=\"/gift/certificates\"]"),
+    curButt = $(".simple-menu__link--country"),
+    bynButt = $(".radio-with-text:nth-child(9) .radio-with-text__name"),
+    checkCurr = $(".simple-menu__currency"),
+    address = $(By.linkText("Адреса")),
+    inpAdd = $(".map-search__input"),
+    listAdd = $(".map-search__suggest-list");
 
     public MainPagePO openPage(){
         open("https://www.wildberries.ru/");
@@ -59,6 +70,40 @@ public class MainPagePO {
     }
     public MainPagePO basketResult(String value){
         resultBasket.shouldHave(text(value));
+        return this;
+    }
+    public MainPagePO openBurgMenu(){
+        openMenu.click();
+        return this;
+    }
+    public MainPagePO checkSert(String value){
+        sert.shouldHave(text(value));
+        return this;
+    }
+    public MainPagePO clickCurrencyButton(){
+        curButt.click();
+        return this;
+    }
+    public MainPagePO selectCurrency(){
+        bynButt.click();
+        return this;
+    }
+    public MainPagePO checkCurrencyResult(String value){
+        checkCurr.shouldHave(text(value));
+        return this;
+    }
+    public MainPagePO clickAddressButton(){
+        address.click();
+        sleep(7000);//карту грузит долго поэтому слип
+        return this;
+    }
+    public MainPagePO inputAddress(String value){
+        inpAdd.scrollIntoView(true).setValue(value);
+        return this;
+    }
+    public MainPagePO checkListOfAddress(String value){
+        listAdd.shouldHave(text(value));
+
         return this;
     }
 }

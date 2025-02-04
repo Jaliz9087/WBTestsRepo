@@ -49,8 +49,33 @@ tasks.withType(Test) {
     }
 }
 
-task Form_test(type: Test) {
+task AllTest(type: Test) {
     useJUnitPlatform {
-        includeTags("Form_test")
+        includeTags("AllTest")
+    }
+}
+task NegativeTest(type: Test) {
+    useJUnitPlatform {
+        includeTags("NegativeTest")
+    }
+}
+task SearchNBasket(type: Test) {
+    useJUnitPlatform {
+        includeTags("SearchNBasket")
+    }
+}
+task BurgerTest(type: Test) {
+    useJUnitPlatform {
+        includeTags("BurgerTest")
+    }
+}
+task Currency(type: Test) {
+    useJUnitPlatform {
+        includeTags("Currency")
+    }
+}
+task MapTest(type: Test) {
+    useJUnitPlatform {
+        includeTags("MapTest")
     }
 }
