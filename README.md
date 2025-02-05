@@ -78,10 +78,15 @@ gradle clean AllTests \
 <a id="allure"></a>
 ## **📊 Allure отчет**
 
-### [Allure отчет](link)
+### [Allure отчет](https://jenkins.autotests.cloud/job/whey-WBTest-QG14/22/allure/)
 
 <p align="center">  
-<a href="link"><img src="screens/AllureReport.png" alt="Allure" width="950"/></a>  
+<a href="link"><img src="screens/AllureRep.png" width="950"/></a>  
+</p>
+
+### **Тест кейсы**
+<p align="center">  
+<a href="link"><img src="screens/TC.png" width="950"/></a>  
 </p>
 
 ---
