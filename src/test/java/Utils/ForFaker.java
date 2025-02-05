@@ -1,6 +1,5 @@
 package Utils;
 
-import com.github.javafaker.Address;
 import com.github.javafaker.Faker;
 
 import java.util.Locale;
