@@ -44,7 +44,6 @@ ___
 <p align="center">  
 <a href="https://jenkins.autotests.cloud/job/whey-WBTest-QG14/"><img src="screens/JenkinsJob.png" alt="Jenkins" width="950"/></a>  
 </p>
----
 
 # **Параметры сборки в Jenkins:**
 
