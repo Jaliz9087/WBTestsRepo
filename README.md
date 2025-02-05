@@ -78,10 +78,10 @@ gradle clean AllTests \
 <a id="allure"></a>
 ## **📊 Allure отчет**
 
-### [Allure отчет](https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/allure/)
+### [Allure отчет](link)
 
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/allure/"><img src="screens/AllureReport.png" alt="Allure" width="950"/></a>  
+<a href="link"><img src="screens/AllureReport.png" alt="Allure" width="950"/></a>  
 </p>
 
 ---
