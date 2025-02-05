@@ -40,8 +40,8 @@ public class MainPageTests extends TestBase {
             mainPagePO.openPage();
         });
         step("Ищем дельфина и проверяем полученный товар",() ->{
-            mainPagePO.setOurGoods("Flipper Zero");
-            mainPagePO.resultsCheck("Flipper Zero")
+            mainPagePO.setOurGoods("Flipper Zero")
+                    .resultsCheck("Flipper Zero")
                     .clickGoodsCard("Atlass");
         });
         step("Перекидываем товар в корзину", () ->{
