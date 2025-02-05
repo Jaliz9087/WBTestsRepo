@@ -76,9 +76,9 @@ gradle clean AllTests \
 
 ---
 <a id="allure"></a>
-## **📊 Allure отчет**
+## **📊 [Allure отчет](https://jenkins.autotests.cloud/job/whey-WBTest-QG14/22/allure/)**
 
-### [Allure отчет](https://jenkins.autotests.cloud/job/whey-WBTest-QG14/22/allure/)
+
 
 <p align="center">  
 <a href="https://jenkins.autotests.cloud/job/whey-WBTest-QG14/22/allure/"><img src="images/screens/AllureRep.png" width="950"/></a>  
@@ -93,12 +93,22 @@ gradle clean AllTests \
 ---
 <a id="telegram"></a>
 ## **📩 Уведомление в Telegram при помощи бота**
+---
+<p align="center">  
+<img title="Allure Overview Dashboard" src="images/screens/telegram.png" width="550">  
+</p>
 
 Автоматическое уведомление о результатах тестов отправляется в Telegram через бота.
 
 ---
+
 <a id="video"></a>
 ## **🎥 Примеры видео выполнения тестов на Selenoid**
+
+<p align="center">
+<img title="Selenoid Video" src="images/gif/TG-ezgif.com-video-to-gif-converter.gif" width="550" height="350"  alt="video">   
+</p>
+
 
 Видео-записи выполнения тестов доступны в Selenoid. Они помогают анализировать тестовые сценарии и находить потенциальные ошибки.
 
