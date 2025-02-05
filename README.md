@@ -1,19 +1,21 @@
 # Проект автоматизации тестирования для [**Wildberries**](https://www.wildberries.ru/)
----
->**Wildberries**-еждународный онлайн-маркетплейс с огромным ассортиментом: от одежды, обуви, детских товаров до электроники и аксессуаров для дома.
+
+**Wildberries** — международный онлайн-маркетплейс с огромным ассортиментом товаров: от одежды, обуви, детских товаров до электроники и аксессуаров для дома.
+
 ---
 ## *Содержание*:
----
-* <a href="#tools">Технологии и инструменты</a> 
-* <a href="#cases">Примеры автоматизированных тест-кейсов</a>  
-* <a href="#jenkins">Сборка в Jenkins</a>  
-* <a href="#console">Запуск из терминала</a>  
-* <a href="#allure">Allure отчет</a>
-* <a href="#telegram">Уведомление в Telegram при помощи бота</a>  
-* <a href="#video">Примеры видео выполнения тестов на Selenoid</a>
+
+- [Технологии и инструменты](#tools)
+- [Примеры автоматизированных тест-кейсов](#cases)
+- [Сборка в Jenkins](#jenkins)
+- [Запуск из терминала](#console)
+- [Allure отчет](#allure)
+- [Уведомление в Telegram](#telegram)
+- [Примеры видео выполнения тестов на Selenoid](#video)
+
 ---
 <a id="tools"></a>
-## <a name="Технологии и инструменты">**Технологии и инструменты:**</a>
+## **Технологии и инструменты**
 
 <p align="center">  
 <a href="https://www.jetbrains.com/idea/"><img src="icons/idea.svg" width="50" height="50"  alt="IDEA"/></a>  
@@ -23,56 +25,75 @@
 <a href="https://gradle.org/"><img src="icons/gradle.svg" width="50" height="50"  alt="Gradle"/></a>  
 <a href="https://selenide.org/"><img src="icons/selenide.svg" width="50" height="50"  alt="Selenide"/></a>  
 <a href="https://aerokube.com/selenoid/"><img src="icons/selenoid.svg" width="50" height="50"  alt="Selenoid"/></a>  
-<a href="ht[images](images)tps://github.com/allure-framework/allure2"><img src="icons/allure.svg" width="50" height="50"  alt="Allure"/></a>
+<a href="https://github.com/allure-framework/allure2"><img src="icons/allure.svg" width="50" height="50"  alt="Allure"/></a>  
 <a href="https://www.jenkins.io/"><img src="icons/jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
-
 </p>
 
 ---
 <a id="cases"></a>
+## **Примеры автоматизированных тест-кейсов**
 
-## <a name="Примеры автоматизированных тест-кейсов">**Примеры автоматизированных тест-кейсов:**</a>
----
 - ✓ *Проверка ошибки при вводе невалидного номера телефона*
-- ✓ *Проверка поиска товара и дропа его в корзину*
-- ✓ *Проверка работы бургера*
+- ✓ *Проверка поиска товара и добавления в корзину*
+- ✓ *Проверка работы бургер-меню*
 - ✓ *Проверка изменения валюты*
 - ✓ *Проверка маппинга латиницы при поиске улицы на карте*
 
 ---
-
 <a id="jenkins"></a>
-## <img alt="Jenkins" height="25" src="icons/jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/whey-WBTest-QG14/)</a>
-___
+## **Сборка в Jenkins**
+
+### [Jenkins-сборка](https://jenkins.autotests.cloud/job/whey-WBTest-QG14/)
+
 <p align="center">  
 <a href="https://jenkins.autotests.cloud/job/whey-WBTest-QG14/"><img src="screens/JenkinsJob.png" alt="Jenkins" width="950"/></a>  
 </p>
 
-# **Параметры сборки в Jenkins:**
+### **Параметры сборки в Jenkins:**
 
-- *browser (браузер, по умолчанию chrome)*
-- *browserVersion (версия браузера, по умолчанию 126)*
-- *browserSize (размер окна браузера, по умолчанию 1920x1080)*
-- *remoteUrl (логин, пароль и адрес удаленного сервера Selenoid)*
+- `browser` (браузер, по умолчанию Chrome)
+- `browserVersion` (версия браузера, по умолчанию 126)
+- `browserSize` (размер окна браузера, по умолчанию 1920x1080)
+- `remoteUrl` (логин, пароль и адрес удаленного сервера Selenoid)
 
 ---
 <a id="console"></a>
-## Команды для запуска из терминала
-___
-***Локальный запуск:***
+## **Команды для запуска из терминала**
+
+### **Локальный запуск:**
 ```bash  
 gradle clean AllTests
 ```
 
-***Удалённый запуск через Jenkins:***
+### **Удалённый запуск через Jenkins:**
 ```bash  
-clean X5Group_test
-"-Dbrowser=${BROWSER}"
-"-DbrowserSize=${BROWSER_SIZE}"
-"-DbrowserVersion=${BROWSER_VERSION}"
-"-DremoteHost=${WDHOST}"
+gradle clean AllTests \
+  -Dbrowser=${BROWSER} \
+  -DbrowserSize=${BROWSER_SIZE} \
+  -DbrowserVersion=${BROWSER_VERSION} \
+  -DremoteHost=${WDHOST}
 ```
+
 ---
 <a id="allure"></a>
-## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/allure/)</a>
-___
+## **Allure отчет**
+
+### [Allure отчет](https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/allure/)
+
+<p align="center">  
+<a href="https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/allure/"><img src="screens/AllureReport.png" alt="Allure" width="950"/></a>  
+</p>
+
+---
+<a id="telegram"></a>
+## **Уведомление в Telegram при помощи бота**
+
+Автоматическое уведомление о результатах тестов отправляется в Telegram через бота.
+
+---
+<a id="video"></a>
+## **Примеры видео выполнения тестов на Selenoid**
+
+Видео-записи выполнения тестов доступны в Selenoid. Они помогают анализировать тестовые сценарии и находить потенциальные ошибки.
+
+---
