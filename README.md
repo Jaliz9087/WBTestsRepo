@@ -46,7 +46,7 @@
 ### [Jenkins-сборка](https://jenkins.autotests.cloud/job/whey-WBTest-QG14/)
 
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/whey-WBTest-QG14/"><img src="screens/JenkinsJob.png" alt="Jenkins" width="950"/></a>  
+<a href="https://jenkins.autotests.cloud/job/whey-WBTest-QG14/"><img src="images/screens/JenkinsJob.png" alt="Jenkins" width="950"/></a>  
 </p>
 
 ### **Параметры сборки в Jenkins:**
@@ -81,12 +81,12 @@ gradle clean AllTests \
 ### [Allure отчет](https://jenkins.autotests.cloud/job/whey-WBTest-QG14/22/allure/)
 
 <p align="center">  
-<a href="link"><img src="screens/AllureRep.png" width="950"/></a>  
+<a href="https://jenkins.autotests.cloud/job/whey-WBTest-QG14/22/allure/nk"><img src="images/screens/AllureRep.png" width="950"/></a>  
 </p>
 
 ### **Тест кейсы**
 <p align="center">  
-<a href="link"><img src="screens/TC.png" width="950"/></a>  
+<a href="https://jenkins.autotests.cloud/job/whey-WBTest-QG14/22/allure/"><img src="images/screens/TC.png" width="950"/></a>  
 </p>
 
 ---
