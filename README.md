@@ -18,15 +18,15 @@
 ## **🛠️ Технологии и инструменты**
 
 <p align="center">  
-<a href="https://www.jetbrains.com/idea/"><img src="icons/idea.svg" width="50" height="50"  alt="IDEA"/></a>  
-<a href="https://www.java.com/"><img src="icons/java.svg" width="50" height="50"  alt="Java"/></a>  
-<a href="https://github.com/"><img src="icons/github.svg" width="50" height="50"  alt="Github"/></a>  
-<a href="https://junit.org/junit5/"><img src="icons/junit.svg" width="50" height="50"  alt="JUnit 5"/></a>  
-<a href="https://gradle.org/"><img src="icons/gradle.svg" width="50" height="50"  alt="Gradle"/></a>  
-<a href="https://selenide.org/"><img src="icons/selenide.svg" width="50" height="50"  alt="Selenide"/></a>  
-<a href="https://aerokube.com/selenoid/"><img src="icons/selenoid.svg" width="50" height="50"  alt="Selenoid"/></a>  
-<a href="https://github.com/allure-framework/allure2"><img src="icons/allure.svg" width="50" height="50"  alt="Allure"/></a>  
-<a href="https://www.jenkins.io/"><img src="icons/jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
+<a href="https://www.jetbrains.com/idea/"><img src="images/icons/idea.svg" width="50" height="50"  alt="IDEA"/></a>  
+<a href="https://www.java.com/"><img src="images/icons/java.svg" width="50" height="50"  alt="Java"/></a>  
+<a href="https://github.com/"><img src="images/icons/github.svg" width="50" height="50"  alt="Github"/></a>  
+<a href="https://junit.org/junit5/"><img src="images/icons/junit.svg" width="50" height="50"  alt="JUnit 5"/></a>  
+<a href="https://gradle.org/"><img src="images/icons/gradle.svg" width="50" height="50"  alt="Gradle"/></a>  
+<a href="https://selenide.org/"><img src="images/icons/selenide.svg" width="50" height="50"  alt="Selenide"/></a>  
+<a href="https://aerokube.com/selenoid/"><img src="images/icons/selenoid.svg" width="50" height="50"  alt="Selenoid"/></a>  
+<a href="https://github.com/allure-framework/allure2"><img src="images/icons/allure.svg" width="50" height="50"  alt="Allure"/></a>  
+<a href="https://www.jenkins.io/"><img src="images/icons/jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
 </p>
 
 ---
@@ -81,9 +81,10 @@ gradle clean AllTests \
 ### [Allure отчет](https://jenkins.autotests.cloud/job/whey-WBTest-QG14/22/allure/)
 
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/whey-WBTest-QG14/22/allure/nk"><img src="images/screens/AllureRep.png" width="950"/></a>  
+<a href="https://jenkins.autotests.cloud/job/whey-WBTest-QG14/22/allure/"><img src="images/screens/AllureRep.png" width="950"/></a>  
 </p>
 
+---
 ### **Тест кейсы**
 <p align="center">  
 <a href="https://jenkins.autotests.cloud/job/whey-WBTest-QG14/22/allure/"><img src="images/screens/TC.png" width="950"/></a>  
