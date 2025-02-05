@@ -1,9 +1,9 @@
 {
   "base": {
     "logo": "",
-    "project": "Mine project",
-    "environment": "demoqa",
-    "comment": "Work pls",
+    "project": "whey-WBTest-QG14",
+    "environment": "Wildberries",
+    "comment": "=)",
     "reportLink": "",
     "language": "en",
     "allureFolder": "allure-report",
