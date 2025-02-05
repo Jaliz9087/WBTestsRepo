@@ -27,8 +27,10 @@
 <a href="https://www.jenkins.io/"><img src="icons/jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
 
 </p>
+
 ---
 <a id="cases"></a>
+
 ## <a name="Примеры автоматизированных тест-кейсов">**Примеры автоматизированных тест-кейсов:**</a>
 ---
 - ✓ *Проверка ошибки при вводе невалидного номера телефона*
@@ -38,6 +40,7 @@
 - ✓ *Проверка маппинга латиницы при поиске улицы на карте*
 
 ---
+
 <a id="jenkins"></a>
 ## <img alt="Jenkins" height="25" src="icons/jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/whey-WBTest-QG14/)</a>
 ___
