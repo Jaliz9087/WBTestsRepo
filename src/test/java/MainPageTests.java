@@ -1,13 +1,9 @@
-
+import io.qameta.allure.Step;
 import pages.*;
-
-
 import utils.ForFaker;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-
-import static io.qameta.allure.Allure.step;
 
 @Tag("AllTests")
 public class MainPageTests extends TestBase {
@@ -24,85 +20,123 @@ public class MainPageTests extends TestBase {
     @Test
     @DisplayName("Получаем ошибку при вводе невалидного номера телефона")
     @Tag("NegativeTest")
-    void failedLoginTest(){
-        step("Откроем страницу и кликнем по логину", () ->{
-            mainPagePO.openPage();
-            loginPage.loginClick();
-        });
-        step("Вводим невалидный номер", () ->{
-            loginPage.inputNum(forFaker.UserNumber);
-        });
-        step("Проверяем получение ошибки", () ->{
-            loginPage.Error();
-        });
+    void failedLoginTest() {
+        openLoginPage();
+        enterInvalidPhoneNumber(forFaker.UserNumber);
+        checkErrorMessage();
     }
 
-   @Test
-   @DisplayName("Search Dolphin n drop to basket =)")
-   @Tag("SearchNBasket")
-    void searchFlipperTest(){
-        step("Откроем страницу", () ->{
-            mainPagePO.openPage();
-        });
-        step("Ищем дельфина и проверяем полученный товар",() ->{
-            searchGoods.setOurGoods("Flipper Zero");
-            searchGoods.resultsCheck("Flipper Zero");
-            searchGoods.clickGoodsCard("Flipper Zero");
-        });
-        step("Перекидываем товар в корзину", () ->{
-            card.dropToBasket()
-            .basketClick();
-        });
-        step("Проверяем корзину", () ->{
-            basket.basketResult("Мультитул Flipper Zero");
-        });
-
+    @Step("Открываем страницу логина и нажимаем на кнопку входа")
+    public void openLoginPage() {
+        mainPagePO.openPage();
+        loginPage.loginClick();
     }
-    @ValueSource(strings = {
-            "Сертификаты Wildberries"
-    })
+
+    @Step("Вводим невалидный номер: {number}")
+    public void enterInvalidPhoneNumber(String number) {
+        loginPage.inputNum(number);
+    }
+
+    @Step("Проверяем появление ошибки")
+    public void checkErrorMessage() {
+        loginPage.Error();
+    }
+
+    @Test
+    @DisplayName("Search Dolphin n drop to basket =)")
+    @Tag("SearchNBasket")
+    void searchFlipperTest() {
+        openMainPage();
+        searchAndCheckFlipperZero();
+        addToBasket();
+        checkBasket();
+    }
+
+    @Step("Открываем главную страницу")
+    public void openMainPage() {
+        mainPagePO.openPage();
+    }
+
+    @Step("Ищем Flipper Zero и проверяем найденный товар")
+    public void searchAndCheckFlipperZero() {
+        searchGoods.setOurGoods("Flipper Zero");
+        searchGoods.resultsCheck("Flipper Zero");
+        searchGoods.clickGoodsCard("Flipper Zero");
+    }
+
+    @Step("Добавляем товар в корзину")
+    public void addToBasket() {
+        card.dropToBasket()
+                .basketClick();
+    }
+
+    @Step("Проверяем корзину на наличие Flipper Zero")
+    public void checkBasket() {
+        basket.basketResult("Мультитул Flipper Zero");
+    }
+
+    @ValueSource(strings = {"Сертификаты Wildberries"})
     @ParameterizedTest
     @DisplayName("Смотрим серты в бургере")
     @Tag("BurgerTest")
-    void checkBrowserPageTest(String Check){
-        step("Открыть бургер", () ->{
-            mainPagePO.openPage();
-            burger.openBurgMenu();
-        });
-        step("Проверяем таб сертификатов", () ->{
-             burger.checkSert(Check);
-        });
+    void checkBrowserPageTest(String check) {
+        openBurgerMenu();
+        checkCertificatesTab(check);
+    }
+
+    @Step("Открываем страницу и бургер-меню")
+    public void openBurgerMenu() {
+        mainPagePO.openPage();
+        burger.openBurgMenu();
+    }
+
+    @Step("Проверяем вкладку сертификатов: {check}")
+    public void checkCertificatesTab(String check) {
+        burger.checkSert(check);
     }
 
     @Test
     @Tag("Currency")
     @DisplayName("Switch currency")
-    void franshizaTabTest(){
-        step("Открываем страницу", () ->{
-            mainPagePO.openPage();
-        });
-        step("Кликаем по валюте и выбираем буны", () ->{
-            currency.clickCurrencyButton()
-                    .selectCurrency();
-        });
-        step("Проверяем что выбрались БУНЫ", () ->{
-            currency.checkCurrencyResult("BYN");
-        });
+    void franshizaTabTest() {
+        openMainPage();
+        selectCurrencyByn();
+        checkSelectedCurrency();
+    }
+
+    @Step("Кликаем по валюте и выбираем BYN")
+    public void selectCurrencyByn() {
+        currency.clickCurrencyButton()
+                .selectCurrency();
+    }
+
+    @Step("Проверяем, что выбрана валюта: BYN")
+    public void checkSelectedCurrency() {
+        currency.checkCurrencyResult("BYN");
     }
 
     @Test
     @Tag("MapTest")
     @DisplayName("Чекнем маппинг языка при вводе на латинице")
-    void checkingLanguageMappingTest(){
-        step("Открываем страницу и кликаем по адресам", () -> {
-            mainPagePO.openPage();
-            address.clickAddressButton();
-        });
-        step("Вводим адрес", () ->{
-            address.inputAddress("Jhlsyrf");
-        });
-        step("Проверяем лист адресов", () ->{
-            address.checkListOfAddress("улица Большая Ордынка");
-        });
+    void checkingLanguageMappingTest() {
+        openPageAndClickAddress();
+        enterAddress();
+        checkAddressList();
+    }
+
+    @Step("Открываем страницу и кликаем по адресам")
+    public void openPageAndClickAddress() {
+        mainPagePO.openPage();
+        address.clickAddressButton();
+    }
+
+    @Step("Вводим адрес на латинице")
+    public void enterAddress() {
+        address.inputAddress("Jhlsyrf");
+    }
+
+    @Step("Проверяем лист адресов, должен содержать: улица Большая Ордынка")
+    public void checkAddressList() {
+        address.checkListOfAddress("улица Большая Ордынка");
     }
 }
