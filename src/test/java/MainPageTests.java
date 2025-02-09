@@ -47,7 +47,7 @@ public class MainPageTests extends TestBase {
         step("Ищем дельфина и проверяем полученный товар",() ->{
             searchGoods.setOurGoods("Flipper Zero");
             searchGoods.resultsCheck("Flipper Zero");
-            searchGoods.clickGoodsCard("Atlass");
+            searchGoods.clickGoodsCard("Flipper Zero");
         });
         step("Перекидываем товар в корзину", () ->{
             card.dropToBasket()
