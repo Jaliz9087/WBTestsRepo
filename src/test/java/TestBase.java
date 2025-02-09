@@ -1,6 +1,4 @@
-package PO;
-
-import Attach.Attachments;
+import attach.Attachments;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -35,7 +33,7 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
     @AfterEach
-        void getAttach(){
+    void getAttach(){
         Attachments.screenshotAs("Screen after each");
         Attachments.pageSource();
         Attachments.browserConsoleLogs();

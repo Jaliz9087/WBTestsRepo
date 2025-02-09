@@ -1,34 +1,39 @@
 
-import PO.MainPagePO;
+import pages.*;
 
 
-import PO.TestBase;
-import Utils.ForFaker;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import utils.ForFaker;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+
 import static io.qameta.allure.Allure.step;
 
 @Tag("AllTests")
 public class MainPageTests extends TestBase {
     MainPagePO mainPagePO = new MainPagePO();
     ForFaker forFaker = new ForFaker();
+    LoginPage loginPage = new LoginPage();
+    Address address = new Address();
+    Basket basket = new Basket();
+    Burger burger = new Burger();
+    Card card = new Card();
+    Currency currency = new Currency();
+    SearchGoods searchGoods = new SearchGoods();
 
     @Test
     @DisplayName("Получаем ошибку при вводе невалидного номера телефона")
     @Tag("NegativeTest")
     void failedLoginTest(){
         step("Откроем страницу и кликнем по логину", () ->{
-            mainPagePO.openPage()
-                    .loginClick();
+            mainPagePO.openPage();
+            loginPage.loginClick();
         });
         step("Вводим невалидный номер", () ->{
-            mainPagePO.inputNum(forFaker.UserNumber);
+            loginPage.inputNum(forFaker.UserNumber);
         });
         step("Проверяем получение ошибки", () ->{
-            mainPagePO.Error();
+            loginPage.Error();
         });
     }
 
@@ -40,16 +45,16 @@ public class MainPageTests extends TestBase {
             mainPagePO.openPage();
         });
         step("Ищем дельфина и проверяем полученный товар",() ->{
-            mainPagePO.setOurGoods("Flipper Zero")
-                    .resultsCheck("Flipper Zero")
-                    .clickGoodsCard("Atlass");
+            searchGoods.setOurGoods("Flipper Zero");
+            searchGoods.resultsCheck("Flipper Zero");
+            searchGoods.clickGoodsCard("Atlass");
         });
         step("Перекидываем товар в корзину", () ->{
-            mainPagePO.dropToBasket()
-                    .basketClick();
+            card.dropToBasket()
+            .basketClick();
         });
         step("Проверяем корзину", () ->{
-            mainPagePO.basketResult("Мультитул Flipper Zero");
+            basket.basketResult("Мультитул Flipper Zero");
         });
 
     }
@@ -59,13 +64,13 @@ public class MainPageTests extends TestBase {
     @ParameterizedTest
     @DisplayName("Смотрим серты в бургере")
     @Tag("BurgerTest")
-    void checkBrowserPage(String Check){
+    void checkBrowserPageTest(String Check){
         step("Открыть бургер", () ->{
-            mainPagePO.openPage()
-                    .openBurgMenu();
+            mainPagePO.openPage();
+            burger.openBurgMenu();
         });
         step("Проверяем таб сертификатов", () ->{
-             mainPagePO.checkSert(Check);
+             burger.checkSert(Check);
         });
     }
 
@@ -77,11 +82,11 @@ public class MainPageTests extends TestBase {
             mainPagePO.openPage();
         });
         step("Кликаем по валюте и выбираем буны", () ->{
-            mainPagePO.clickCurrencyButton()
+            currency.clickCurrencyButton()
                     .selectCurrency();
         });
         step("Проверяем что выбрались БУНЫ", () ->{
-            mainPagePO.checkCurrencyResult("BYN");
+            currency.checkCurrencyResult("BYN");
         });
     }
 
@@ -90,15 +95,14 @@ public class MainPageTests extends TestBase {
     @DisplayName("Чекнем маппинг языка при вводе на латинице")
     void checkingLanguageMappingTest(){
         step("Открываем страницу и кликаем по адресам", () -> {
-            mainPagePO.openPage()
-                    .clickAddressButton();
+            mainPagePO.openPage();
+            address.clickAddressButton();
         });
         step("Вводим адрес", () ->{
-            mainPagePO.inputAddress("Jhlsyrf");
+            address.inputAddress("Jhlsyrf");
         });
         step("Проверяем лист адресов", () ->{
-            mainPagePO.checkListOfAddress("улица Большая Ордынка");
+            address.checkListOfAddress("улица Большая Ордынка");
         });
     }
-
 }
