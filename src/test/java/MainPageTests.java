@@ -21,24 +21,9 @@ public class MainPageTests extends TestBase {
     @DisplayName("Получаем ошибку при вводе невалидного номера телефона")
     @Tag("NegativeTest")
     void failedLoginTest() {
-        openLoginPage();
-        enterInvalidPhoneNumber(forFaker.UserNumber);
-        checkErrorMessage();
-    }
-
-    @Step("Открываем страницу логина и нажимаем на кнопку входа")
-    public void openLoginPage() {
         mainPagePO.openPage();
         loginPage.loginClick();
-    }
-
-    @Step("Вводим невалидный номер: {number}")
-    public void enterInvalidPhoneNumber(String number) {
-        loginPage.inputNum(number);
-    }
-
-    @Step("Проверяем появление ошибки")
-    public void checkErrorMessage() {
+        loginPage.inputNum(forFaker.UserNumber);
         loginPage.Error();
     }
 
@@ -46,52 +31,21 @@ public class MainPageTests extends TestBase {
     @DisplayName("Search Dolphin n drop to basket =)")
     @Tag("SearchNBasket")
     void searchFlipperTest() {
-        openMainPage();
-        searchAndCheckFlipperZero();
-        addToBasket();
-        checkBasket();
-    }
-
-    @Step("Открываем главную страницу")
-    public void openMainPage() {
         mainPagePO.openPage();
-    }
-
-    @Step("Ищем Flipper Zero и проверяем найденный товар")
-    public void searchAndCheckFlipperZero() {
         searchGoods.setOurGoods("Flipper Zero");
         searchGoods.resultsCheck("Flipper Zero");
         searchGoods.clickGoodsCard("Flipper Zero");
-    }
-
-    @Step("Добавляем товар в корзину")
-    public void addToBasket() {
-        card.dropToBasket()
-                .basketClick();
-    }
-
-    @Step("Проверяем корзину на наличие Flipper Zero")
-    public void checkBasket() {
+        card.dropToBasket().basketClick();
         basket.basketResult("Мультитул Flipper Zero");
     }
 
-    @ValueSource(strings = {"Сертификаты Wildberries"})
     @ParameterizedTest
+    @ValueSource(strings = {"Сертификаты Wildberries"})
     @DisplayName("Смотрим серты в бургере")
     @Tag("BurgerTest")
     void checkBrowserPageTest(String check) {
-        openBurgerMenu();
-        checkCertificatesTab(check);
-    }
-
-    @Step("Открываем страницу и бургер-меню")
-    public void openBurgerMenu() {
         mainPagePO.openPage();
         burger.openBurgMenu();
-    }
-
-    @Step("Проверяем вкладку сертификатов: {check}")
-    public void checkCertificatesTab(String check) {
         burger.checkSert(check);
     }
 
@@ -99,19 +53,8 @@ public class MainPageTests extends TestBase {
     @Tag("Currency")
     @DisplayName("Switch currency")
     void franshizaTabTest() {
-        openMainPage();
-        selectCurrencyByn();
-        checkSelectedCurrency();
-    }
-
-    @Step("Кликаем по валюте и выбираем BYN")
-    public void selectCurrencyByn() {
-        currency.clickCurrencyButton()
-                .selectCurrency();
-    }
-
-    @Step("Проверяем, что выбрана валюта: BYN")
-    public void checkSelectedCurrency() {
+        mainPagePO.openPage();
+        currency.clickCurrencyButton().selectCurrency();
         currency.checkCurrencyResult("BYN");
     }
 
@@ -119,24 +62,9 @@ public class MainPageTests extends TestBase {
     @Tag("MapTest")
     @DisplayName("Чекнем маппинг языка при вводе на латинице")
     void checkingLanguageMappingTest() {
-        openPageAndClickAddress();
-        enterAddress();
-        checkAddressList();
-    }
-
-    @Step("Открываем страницу и кликаем по адресам")
-    public void openPageAndClickAddress() {
         mainPagePO.openPage();
         address.clickAddressButton();
-    }
-
-    @Step("Вводим адрес на латинице")
-    public void enterAddress() {
         address.inputAddress("Jhlsyrf");
-    }
-
-    @Step("Проверяем лист адресов, должен содержать: улица Большая Ордынка")
-    public void checkAddressList() {
         address.checkListOfAddress("улица Большая Ордынка");
     }
 }
