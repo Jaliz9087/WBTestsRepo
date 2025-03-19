@@ -1,11 +1,14 @@
-import io.qameta.allure.Step;
+package uitests;
+
+import io.qameta.allure.Owner;
 import pages.*;
 import utils.ForFaker;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-@Tag("AllTests")
+@Owner("-whey-")
+@Tags({@Tag("ui"), @Tag("AllTests")})
 public class MainPageTests extends TestBase {
     MainPagePO mainPagePO = new MainPagePO();
     ForFaker forFaker = new ForFaker();
@@ -18,7 +21,7 @@ public class MainPageTests extends TestBase {
     SearchGoods searchGoods = new SearchGoods();
 
     @Test
-    @DisplayName("Получаем ошибку при вводе невалидного номера телефона")
+    @DisplayName("We get an error when entering an invalid phone number")
     @Tag("NegativeTest")
     void failedLoginTest() {
         mainPagePO.openPage();
@@ -41,7 +44,7 @@ public class MainPageTests extends TestBase {
 
     @ParameterizedTest
     @ValueSource(strings = {"Сертификаты Wildberries"})
-    @DisplayName("Смотрим серты в бургере")
+    @DisplayName("checking for certificates")
     @Tag("BurgerTest")
     void checkBrowserPageTest(String check) {
         mainPagePO.openPage();
@@ -60,7 +63,7 @@ public class MainPageTests extends TestBase {
 
     @Test
     @Tag("MapTest")
-    @DisplayName("Чекнем маппинг языка при вводе на латинице")
+    @DisplayName("check the language mapping when typing in Latin")
     void checkingLanguageMappingTest() {
         mainPagePO.openPage();
         address.clickAddressButton();

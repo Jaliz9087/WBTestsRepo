@@ -1,3 +1,5 @@
+package uitests;
+
 import attach.Attachments;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
