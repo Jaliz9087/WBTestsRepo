@@ -10,7 +10,7 @@ public class PopularFlies {
     public SelenideElement Flies = $(".block-directions_container__DGyXq");
     @Step("Скролим до популярных рейсов")
     public PopularFlies ScrollToFlies(){
-        Flies.scrollTo();
+        Flies.scrollIntoView(false);
         return this;
     }
     @Step("Чекаем популярные рейсы")

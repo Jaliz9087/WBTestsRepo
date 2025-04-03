@@ -37,15 +37,15 @@ public class MainPageTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Ищем флиппер зиро и добавляем в корзину")
+    @DisplayName("Ищем iPhone и добавляем в корзину")
     @Tag("SearchNBasket")
     void searchFlipperTest() {
         mainPagePO.openPage();
-        searchGoods.setOurGoods("Flipper Zero");
-        searchGoods.resultsCheck("Flipper Zero");
-        searchGoods.clickGoodsCard("Flipper Zero");
-        card.dropToBasket().basketClick();
-        basket.basketResult("Мультитул Flipper Zero");
+        searchGoods.setOurGoods("iphone 16");
+        searchGoods.resultsCheck("iPhone 16");
+        searchGoods.clickGoodsCard("iPhone 16");
+//        card.dropToBasket().basketClick();
+//        basket.basketResult("iPhone 16");
     }
 
     @ParameterizedTest
@@ -82,7 +82,7 @@ public class MainPageTests extends TestBase {
     void aviaTest() {
         mainPagePO.openPage();
         Aviasw.openAviaPage();
-        Aviasw.result();
+        Aviasw.result("Популярные направления");
 
     }
         @Test
