@@ -90,6 +90,7 @@ public class MainPageTests extends TestBase {
         @DisplayName("Смотрим популярные рейсы")
         void aviaTest2() {
         mainPagePO.openPage();
+        Aviasw.openAviaPage();
         popularFlies.ScrollToFlies();
         popularFlies.resultCh();
 
