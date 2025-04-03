@@ -19,9 +19,15 @@ public class MainPageTests extends TestBase {
     Card card = new Card();
     Currency currency = new Currency();
     SearchGoods searchGoods = new SearchGoods();
+    AviaSwitchPage Aviasw = new AviaSwitchPage();
+    PopularFlies popularFlies = new PopularFlies();
+
+
+
+
 
     @Test
-    @DisplayName("We get an error when entering an invalid phone number")
+    @DisplayName("Получаем ошибку при вводе невалидного номера")
     @Tag("NegativeTest")
     void failedLoginTest() {
         mainPagePO.openPage();
@@ -31,7 +37,7 @@ public class MainPageTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Search Dolphin n drop to basket =)")
+    @DisplayName("Ищем флиппер зиро и добавляем в корзину")
     @Tag("SearchNBasket")
     void searchFlipperTest() {
         mainPagePO.openPage();
@@ -44,7 +50,7 @@ public class MainPageTests extends TestBase {
 
     @ParameterizedTest
     @ValueSource(strings = {"Сертификаты Wildberries"})
-    @DisplayName("checking for certificates")
+    @DisplayName("Смотрим сертификаты")
     @Tag("BurgerTest")
     void checkBrowserPageTest(String check) {
         mainPagePO.openPage();
@@ -54,7 +60,7 @@ public class MainPageTests extends TestBase {
 
     @Test
     @Tag("Currency")
-    @DisplayName("Switch currency")
+    @DisplayName("Меняем валюту")
     void franshizaTabTest() {
         mainPagePO.openPage();
         currency.clickCurrencyButton().selectCurrency();
@@ -63,11 +69,29 @@ public class MainPageTests extends TestBase {
 
     @Test
     @Tag("MapTest")
-    @DisplayName("check the language mapping when typing in Latin")
+    @DisplayName("Чекаем маппинг языка")
     void checkingLanguageMappingTest() {
         mainPagePO.openPage();
         address.clickAddressButton();
         address.inputAddress("Jhlsyrf");
         address.checkListOfAddress("улица Большая Ордынка");
     }
+    @Test
+    @Tag("AviaTest")
+    @DisplayName("Переключение на страницу авиа")
+    void aviaTest() {
+        mainPagePO.openPage();
+        Aviasw.openAviaPage();
+        Aviasw.result();
+
+    }
+        @Test
+        @Tag("AviaTest")
+        @DisplayName("Смотрим популярные рейсы")
+        void aviaTest2() {
+        mainPagePO.openPage();
+        popularFlies.ScrollToFlies();
+        popularFlies.resultCh();
+
+        }
 }
