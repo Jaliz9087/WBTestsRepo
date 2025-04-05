@@ -15,9 +15,9 @@ import java.util.Map;
 public class TestBase {
     @BeforeAll
     static void beforeAll() {
-        Configuration.timeout = 20000;
+        Configuration.timeout = 30000;
         Configuration.browserSize = System.getProperty("browserSize");
-        Configuration.pageLoadStrategy = "eager";
+        Configuration.pageLoadTimeout = 60000;
 
         Configuration.remote = "https://user1:1234@" + System.getProperty("remoteHost") + "/wd/hub";
         Configuration.browser = System.getProperty("browser");
