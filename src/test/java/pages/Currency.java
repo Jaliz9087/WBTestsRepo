@@ -15,7 +15,7 @@ public class Currency {
     @Step("Кликаем по кнопке смены валюты")
     public Currency clickCurrencyButton(){
         curButt.click();
-        sleep(4000);
+        sleep(5000);
         return this;
     }
     @Step("Выбираем БУНы")
