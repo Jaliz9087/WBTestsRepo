@@ -1,5 +1,6 @@
 package uitests;
 
+import io.qameta.allure.Epic;
 import io.qameta.allure.Owner;
 import pages.*;
 import utils.ForFaker;
@@ -8,21 +9,16 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 @Owner("-whey-")
-@Tags({@Tag("ui"), @Tag("AllTests")})
+@Epic("Main Page Tests")
+@Tags({@Tag("main"), @Tag("AllTests")})
 public class MainPageTests extends TestBase {
     MainPagePO mainPagePO = new MainPagePO();
     ForFaker forFaker = new ForFaker();
     LoginPage loginPage = new LoginPage();
-    Address address = new Address();
-    Burger burger = new Burger();
-    Card card = new Card();
-    Currency currency = new Currency();
-    SearchGoods searchGoods = new SearchGoods();
-    AviaSwitchPage Aviasw = new AviaSwitchPage();
-    PopularFlies popularFlies = new PopularFlies();
-
-
-
+    BurgerPage burger = new BurgerPage();
+    CardPage card = new CardPage();
+    CurrencyPage currency = new CurrencyPage();
+    SearchGoodsPage searchGoods = new SearchGoodsPage();
 
 
     @Test
@@ -32,7 +28,7 @@ public class MainPageTests extends TestBase {
         mainPagePO.openPage();
         loginPage.loginClick();
         loginPage.inputNum(forFaker.UserNumber);
-        loginPage.Error();
+        loginPage.error();
     }
 
     @Test
@@ -44,7 +40,7 @@ public class MainPageTests extends TestBase {
         searchGoods.resultsCheck("iPhone 16");
         searchGoods.clickGoodsCard("iPhone 16");
         card.dropToBasket().basketClick();
-//        basket.basketResult("iPhone 16");
+
     }
 
     @ParameterizedTest
@@ -65,32 +61,4 @@ public class MainPageTests extends TestBase {
         currency.clickCurrencyButton().selectCurrency();
         currency.checkCurrencyResult("BYN");
     }
-
-    @Test
-    @Tag("MapTest")
-    @DisplayName("Чекаем маппинг языка")
-    void checkingLanguageMappingTest() {
-        mainPagePO.openPage();
-        address.clickAddressButton();
-        address.inputAddress("Jhlsyrf");
-        address.checkListOfAddress("улица Большая Ордынка");
-    }
-    @Test
-    @Tag("AviaTest")
-    @DisplayName("Переключение на страницу авиа")
-    void aviaTest() {
-        mainPagePO.openPage();
-        Aviasw.openAviaPage();
-
-
-    }
-        @Test
-        @Tag("AviaTest")
-        @DisplayName("Смотрим популярные рейсы")
-        void aviaTest2() {
-        mainPagePO.openPageAvia();
-        popularFlies.ScrollToFlies();
-        popularFlies.resultCh();
-
-        }
 }

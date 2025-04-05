@@ -11,17 +11,12 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class AviaSwitchPage {
-    public SelenideElement Avia = $(By.xpath("//a[text()='Авиабилеты']")),
-            result = $("h3[class*='block-slider_headingEl']");
+    public SelenideElement Avia = $(By.xpath("//a[text()='Авиабилеты']"));
     @Step("Открыть авиа страницу")
     public AviaSwitchPage openAviaPage() {
         Avia.click();
         return this;
     }
-    @Step("Смотрим результат")
-    public AviaSwitchPage result(String value) {
-        result.shouldHave(text(value));
-        return this;
-    }
+
 
 }

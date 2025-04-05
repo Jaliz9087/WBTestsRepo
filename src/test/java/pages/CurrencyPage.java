@@ -7,24 +7,24 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
-public class Currency {
+public class CurrencyPage {
     public SelenideElement curButt = $(".simple-menu__link--country"),
             bynButt = $(".radio-with-text:nth-child(9) .radio-with-text__name"),
             checkCurr = $(".simple-menu__currency");
 
     @Step("Кликаем по кнопке смены валюты")
-    public Currency clickCurrencyButton(){
+    public CurrencyPage clickCurrencyButton(){
         curButt.click();
         sleep(5000);
         return this;
     }
     @Step("Выбираем БУНы")
-    public Currency selectCurrency(){
+    public CurrencyPage selectCurrency(){
         bynButt.click();
         return this;
     }
     @Step("Проверяем что БУНы выбрались")
-    public Currency checkCurrencyResult(String value){
+    public CurrencyPage checkCurrencyResult(String value){
         checkCurr.shouldHave(text(value));
 
         return this;

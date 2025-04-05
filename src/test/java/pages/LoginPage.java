@@ -23,7 +23,7 @@ public class LoginPage {
         return  this;
     }
     @Step("Проверяем получение ошибки")
-    public LoginPage Error(){
+    public LoginPage error(){
         checkError.shouldHave(text("Некорректный формат номера"));
         return this;
 

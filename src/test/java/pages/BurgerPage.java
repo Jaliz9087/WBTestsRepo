@@ -7,18 +7,18 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
-public class Burger {
+public class BurgerPage {
     public SelenideElement openMenu = $(".nav-element__burger-line"),
             sert = $("a[href=\"/gift/certificates\"]");
 
     @Step("Кликаем по кнопке бургер-меню")
-    public Burger openBurgMenu(){
+    public BurgerPage openBurgMenu(){
         sleep(7000);
         openMenu.click();
         return this;
     }
     @Step("Проверяем наличие сертификатов")
-    public Burger checkSert(String value){
+    public BurgerPage checkSert(String value){
         sert.shouldHave(text(value));
         return this;
     }
