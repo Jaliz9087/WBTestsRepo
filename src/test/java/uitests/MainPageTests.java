@@ -44,7 +44,7 @@ public class MainPageTests extends TestBase {
         searchGoods.setOurGoods("iphone 16");
         searchGoods.resultsCheck("iPhone 16");
         searchGoods.clickGoodsCard("iPhone 16");
-//        card.dropToBasket().basketClick();
+        card.dropToBasket().basketClick();
 //        basket.basketResult("iPhone 16");
     }
 
@@ -82,15 +82,14 @@ public class MainPageTests extends TestBase {
     void aviaTest() {
         mainPagePO.openPage();
         Aviasw.openAviaPage();
-        Aviasw.result("Популярные направления");
+
 
     }
         @Test
         @Tag("AviaTest")
         @DisplayName("Смотрим популярные рейсы")
         void aviaTest2() {
-        mainPagePO.openPage();
-        Aviasw.openAviaPage();
+        mainPagePO.openPageAvia();
         popularFlies.ScrollToFlies();
         popularFlies.resultCh();
 

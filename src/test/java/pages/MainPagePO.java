@@ -12,5 +12,11 @@ public class MainPagePO {
         open("https://www.wildberries.ru/");
         return this;
     }
+    @Step("Открываем travel страницу")
+    public MainPagePO
+    openPageAvia() {
+        open("https://www.wildberries.ru/travel");
+        return this;
+    }
 
 }
