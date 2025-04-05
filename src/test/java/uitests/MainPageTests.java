@@ -14,7 +14,6 @@ public class MainPageTests extends TestBase {
     ForFaker forFaker = new ForFaker();
     LoginPage loginPage = new LoginPage();
     Address address = new Address();
-    Basket basket = new Basket();
     Burger burger = new Burger();
     Card card = new Card();
     Currency currency = new Currency();
