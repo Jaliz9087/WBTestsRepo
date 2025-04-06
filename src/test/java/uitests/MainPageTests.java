@@ -34,7 +34,7 @@ public class MainPageTests extends TestBase {
     @Test
     @DisplayName("Ищем iPhone и добавляем в корзину")
     @Tag("SearchNBasket")
-    void searchFlipperTest() {
+    void searchIphoneTest() {
         mainPagePO.openPage();
         searchGoods.setOurGoods("iphone 16");
         searchGoods.resultsCheck("iPhone 16");

@@ -7,15 +7,23 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byLinkText;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class AviaSwitchPage {
-    public SelenideElement Avia = $(By.xpath("//a[text()='Авиабилеты']"));
+    public SelenideElement Avia = $(byText("Калининград")),
+    Res = $(byText("Самый дешевый"));
     @Step("Открыть авиа страницу")
     public AviaSwitchPage openAviaPage() {
         Avia.click();
         return this;
+    }
+    @Step("Проверяем переход")
+    public AviaSwitchPage checkResult(String value) {
+        Res.shouldHave(text(value));
+        return this;
+
     }
 
 

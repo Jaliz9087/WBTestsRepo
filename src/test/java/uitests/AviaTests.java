@@ -14,15 +14,16 @@ import pages.PopularFliesPage;
 @Tags({@Tag("avia"), @Tag("AllTests")})
 public class AviaTests extends TestBase {
     MainPagePO mainPagePO = new MainPagePO();
-    AviaSwitchPage Aviasw = new AviaSwitchPage();
+    AviaSwitchPage aviaSw = new AviaSwitchPage();
     PopularFliesPage popularFlies = new PopularFliesPage();
 
     @Test
     @Tag("AviaTest")
     @DisplayName("Переключение на страницу авиа")
     void aviaTest() {
-        mainPagePO.openPage();
-        Aviasw.openAviaPage();
+        mainPagePO.openPageAvia();
+        aviaSw.openAviaPage();
+        aviaSw.checkResult("Самый дешевый");
     }
     @Test
     @Tag("AviaTest")
