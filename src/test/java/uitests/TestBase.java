@@ -15,7 +15,7 @@ import java.util.Map;
 public class TestBase {
     @BeforeAll
     static void beforeAll() {
-        Configuration.timeout = 120000;
+        Configuration.timeout = 70000;
         Configuration.browserSize = System.getProperty("browserSize");
         Configuration.pageLoadTimeout = 50000;
         Configuration.pageLoadStrategy = "eager";
