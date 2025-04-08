@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class AviaSwitchPage {
-    public SelenideElement Avia = $(byText("Калининград")),
+    public SelenideElement Avia = $("a[href='/travel?entry_point=tab_header']"),
     Res = $(byText("Самый дешевый"));
     @Step("Открыть авиа страницу")
     public AviaSwitchPage openAviaPage() {
