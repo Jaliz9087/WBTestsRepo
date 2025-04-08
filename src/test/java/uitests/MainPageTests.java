@@ -26,6 +26,7 @@ public class MainPageTests extends TestBase {
     @Tag("NegativeTest")
     void failedLoginTest() {
         mainPagePO.openPage();
+        mainPagePO.skipBanners();
         loginPage.loginClick();
         loginPage.inputNum(forFaker.UserNumber);
         loginPage.error();
@@ -36,6 +37,7 @@ public class MainPageTests extends TestBase {
     @Tag("SearchNBasket")
     void searchIphoneTest() {
         mainPagePO.openPage();
+        mainPagePO.skipBanners();
         searchGoods.setOurGoods("iphone 16");
         searchGoods.resultsCheck("iPhone 16");
         searchGoods.clickGoodsCard("iPhone 16");
@@ -49,6 +51,7 @@ public class MainPageTests extends TestBase {
     @Tag("BurgerTest")
     void checkBrowserPageTest(String check) {
         mainPagePO.openPage();
+        mainPagePO.skipBanners();
         burger.openBurgMenu();
         burger.checkSert(check);
     }
@@ -58,6 +61,7 @@ public class MainPageTests extends TestBase {
     @DisplayName("Меняем валюту")
     void franshizaTabTest() {
         mainPagePO.openPage();
+        mainPagePO.skipBanners();
         currency.clickCurrencyButton().selectCurrency();
         currency.checkCurrencyResult("BYN");
     }

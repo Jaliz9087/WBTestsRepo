@@ -20,8 +20,10 @@ public class Map extends TestBase {
     @DisplayName("Чекаем маппинг языка")
     void checkingLanguageMappingTest() {
         mainPagePO.openPage();
+        mainPagePO.skipBanners();
         address.clickAddressButton();
         address.inputAddress("Jhlsyrf");
+        mainPagePO.skipBanners();
         address.checkListOfAddress("улица Большая Ордынка");
     }
 }

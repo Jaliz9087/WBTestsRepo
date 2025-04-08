@@ -35,14 +35,7 @@ public class TestBase {
     @BeforeEach
     void logger(){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Selenide.executeJavaScript(
-                "const closeElements = document.querySelectorAll(" +
-                        "  '[id*=\"cookie\"], [class*=\"cookie\"], [class*=\"consent\"], [id*=\"consent\"], [class*=\"banner\"], [class*=\"popup\"], [id*=\"popup\"]'" +
-                        ");" +
-                        "closeElements.forEach(e => e.style.display = 'none');" +
-                        "const acceptBtn = [...document.querySelectorAll('button, input[type=button]')].find(e => /принять|accept|agree/i.test(e.innerText));" +
-                        "if (acceptBtn) acceptBtn.click();"
-        );
+
     }
 
 

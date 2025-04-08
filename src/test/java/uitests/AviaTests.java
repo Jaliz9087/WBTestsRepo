@@ -21,7 +21,8 @@ public class AviaTests extends TestBase {
     @Tag("AviaTest")
     @DisplayName("Переключение на страницу авиа")
     void aviaTest() {
-        mainPagePO.openPageAvia();
+        mainPagePO.openPage();
+        mainPagePO.skipBanners();
         aviaSw.openAviaPage();
         aviaSw.checkResult("Самый дешевый");
     }
@@ -30,6 +31,7 @@ public class AviaTests extends TestBase {
     @DisplayName("Смотрим популярные рейсы")
     void aviaTest2() {
         mainPagePO.openPageAvia();
+        mainPagePO.skipBanners();
         popularFlies.scrollToFlies();
         popularFlies.resultCh();
 
