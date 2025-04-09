@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import pages.AviaSwitchPage;
+import pages.ClosePageForAvia;
 import pages.MainPagePO;
 import pages.PopularFliesPage;
 @Owner("-whey-")
@@ -16,6 +17,7 @@ public class AviaTests extends TestBase {
     MainPagePO mainPagePO = new MainPagePO();
     AviaSwitchPage aviaSw = new AviaSwitchPage();
     PopularFliesPage popularFlies = new PopularFliesPage();
+    ClosePageForAvia closePage = new ClosePageForAvia();
 
     @Test
     @Tag("AviaTest")
@@ -24,7 +26,8 @@ public class AviaTests extends TestBase {
         mainPagePO.openPage();
         mainPagePO.skipBanners();
         aviaSw.openAviaPage();
-        aviaSw.checkResult("Самый дешевый");
+        closePage.closePage();
+        aviaSw.checkResult("Билеты");
     }
     @Test
     @Tag("AviaTest")

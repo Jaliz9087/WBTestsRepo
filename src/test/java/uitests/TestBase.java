@@ -17,7 +17,7 @@ public class TestBase {
     static void beforeAll() {
         Configuration.timeout = 60000;
         Configuration.browserSize = System.getProperty("browserSize");
-        Configuration.pageLoadTimeout = 50000;
+        Configuration.pageLoadTimeout = 30000;
         Configuration.pageLoadStrategy = "eager";
 
         Configuration.remote = "https://user1:1234@" + System.getProperty("remoteHost") + "/wd/hub";
