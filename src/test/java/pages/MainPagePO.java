@@ -21,13 +21,7 @@ public class MainPagePO {
     }
     public MainPagePO
       skipBanners(){
-        Selenide.executeJavaScript(
-                "const closeElements = document.querySelectorAll(" +
-                        "  '[id*=\"cookie\"], [class*=\"cookie\"], [class*=\"consent\"], [id*=\"consent\"], [class*=\"banner\"], [class*=\"popup\"], [id*=\"popup\"]'" +
-                        ");" +
-                        "closeElements.forEach(e => e.style.display = 'none');" +
-                        "const acceptBtn = [...document.querySelectorAll('button, input[type=button]')].find(e => /принять|accept|agree/i.test(e.innerText));" +
-                        "if (acceptBtn) acceptBtn.click();");
+        executeJavaScript("arguments[0].style.display = 'none';", $(".cookies"));
         return this;
 
     }

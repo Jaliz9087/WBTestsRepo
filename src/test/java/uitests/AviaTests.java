@@ -10,6 +10,9 @@ import pages.AviaSwitchPage;
 import pages.ClosePageForAvia;
 import pages.MainPagePO;
 import pages.PopularFliesPage;
+
+import static com.codeborne.selenide.Selenide.clearBrowserCookies;
+
 @Owner("-whey-")
 @Epic("AviaTests")
 @Tags({@Tag("avia"), @Tag("AllTests")})
@@ -23,6 +26,7 @@ public class AviaTests extends TestBase {
     @Tag("AviaTest")
     @DisplayName("Переключение на страницу авиа")
     void aviaTest() {
+        clearBrowserCookies();
         mainPagePO.openPage();
         mainPagePO.skipBanners();
         aviaSw.openAviaPage();
@@ -33,8 +37,9 @@ public class AviaTests extends TestBase {
     @Tag("AviaTest")
     @DisplayName("Смотрим популярные рейсы")
     void aviaTest2() {
+        clearBrowserCookies();
         mainPagePO.openPageAvia();
-        mainPagePO.skipBanners();
+       // mainPagePO.skipBanners();
         popularFlies.scrollToFlies();
         popularFlies.resultCh();
 
