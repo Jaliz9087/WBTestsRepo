@@ -37,9 +37,7 @@ public class AviaTests extends TestBase {
     @Tag("AviaTest")
     @DisplayName("Смотрим популярные рейсы")
     void aviaTest2() {
-        clearBrowserCookies();
         mainPagePO.openPageAvia();
-       // mainPagePO.skipBanners();
         popularFlies.scrollToFlies();
         popularFlies.resultCh();
 

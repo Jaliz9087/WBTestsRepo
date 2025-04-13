@@ -13,25 +13,25 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Map;
 
 public class TestBase {
-//    @BeforeAll
-//    static void beforeAll() {
-//        Configuration.timeout = 60000;
-//        Configuration.browserSize = System.getProperty("browserSize");
-//        Configuration.pageLoadTimeout = 30000;
-//        Configuration.pageLoadStrategy = "eager";
-//
-//        Configuration.remote = "https://user1:1234@" + System.getProperty("remoteHost") + "/wd/hub";
-//        Configuration.browser = System.getProperty("browser");
-//        Configuration.browserVersion = System.getProperty("browserVersion");
-//
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-//                "enableVNC", true,
-//                "enableVideo", true
-//
-//        ));
-//        Configuration.browserCapabilities = capabilities;
-//    }
+    @BeforeAll
+    static void beforeAll() {
+        Configuration.timeout = 60000;
+        Configuration.browserSize = System.getProperty("browserSize");
+        Configuration.pageLoadTimeout = 30000;
+        Configuration.pageLoadStrategy = "eager";
+
+        Configuration.remote = "https://user1:1234@" + System.getProperty("remoteHost") + "/wd/hub";
+        Configuration.browser = System.getProperty("browser");
+        Configuration.browserVersion = System.getProperty("browserVersion");
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+
+        ));
+        Configuration.browserCapabilities = capabilities;
+    }
     @BeforeEach
     void logger(){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
