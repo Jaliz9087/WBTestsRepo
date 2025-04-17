@@ -78,12 +78,12 @@ gradle clean AllTests \
 
 ---
 <a id="allure"></a>
-## **📊 [Allure отчет](https://jenkins.autotests.cloud/job/whey-WBTest-QG14/22/allure/)**
+## **📊 [Allure отчет](https://jenkins.autotests.cloud/job/whey-WBTest-QG14/60/allure/)**
 
 
 
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/whey-WBTest-QG14/22/allure/"><img src="images/screens/AllureRep.png" width="950"/></a>  
+<a href="https://jenkins.autotests.cloud/job/whey-WBTest-QG14/60/allure/"><img src="images/screens/AllureRep.png" width="950"/></a>  
 </p>
 
 ---
