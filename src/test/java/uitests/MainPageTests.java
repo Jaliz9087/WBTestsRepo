@@ -29,7 +29,7 @@ public class MainPageTests extends TestBase {
         mainPagePO.skipBanners();
         loginPage.loginClick();
         loginPage.inputNum(forFaker.UserNumber);
-        loginPage.error();
+        loginPage.error("Некорректный формат номера");
     }
 
     @Test
@@ -42,6 +42,7 @@ public class MainPageTests extends TestBase {
         searchGoods.resultsCheck("iPhone 16");
         searchGoods.clickGoodsCard("iPhone 16");
         card.dropToBasket().basketClick();
+        card.basketResult("iPhone 16");
 
     }
 

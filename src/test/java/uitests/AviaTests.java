@@ -39,7 +39,7 @@ public class AviaTests extends TestBase {
     void aviaTest2() {
         mainPagePO.openPageAvia();
         popularFlies.scrollToFlies();
-        popularFlies.resultCh();
+        popularFlies.resultCh("Санкт-Петербург");
 
     }
 }

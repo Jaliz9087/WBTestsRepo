@@ -14,8 +14,8 @@ public class PopularFliesPage {
         return this;
     }
     @Step("Чекаем популярные рейсы")
-    public PopularFliesPage resultCh(){
-        Flies.shouldHave(text("Санкт-Петербург"));
+    public PopularFliesPage resultCh(String value){
+        Flies.shouldHave(text(value));
         return this;
     }
 
