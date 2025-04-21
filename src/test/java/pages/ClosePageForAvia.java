@@ -8,12 +8,12 @@ public class ClosePageForAvia {
     public ClosePageForAvia closePage() {
         ArrayList<String> windows = new ArrayList<>(getWebDriver().getWindowHandles());
 
-        switchTo().window(windows.get(1));     // Переключаемся на второе
-        switchTo().window(windows.get(0)).close(); // Закрываем первое
+        switchTo().window(windows.get(1));
+        switchTo().window(windows.get(0)).close();
 
-        // Обновляем список окон
+
         ArrayList<String> updatedWindows = new ArrayList<>(getWebDriver().getWindowHandles());
-        switchTo().window(updatedWindows.get(0)); // Переключаемся на оставшееся окно
+        switchTo().window(updatedWindows.get(0));
 
         return this;
     }

@@ -17,7 +17,7 @@ public class AddressPage {
     @Step("Кликаем по кнокпе 'Адреса'")
     public AddressPage clickAddressButton(){
         address.click();
-        sleep(7000);//карту грузит долго поэтому слип
+        sleep(7000);
         return this;
     }
     @Step("Вводим адресс")
